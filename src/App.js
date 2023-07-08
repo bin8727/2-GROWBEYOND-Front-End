@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router";
+import GlobalStyle from "./GlobalStyle";
+import Home from "./pages/Home";
+import PatentKr from "./pages/PatentKr";
+import PatentGb from "./pages/PatentGb";
+import Feasibility from "./pages/Feasibility";
+import CostGuide from "./pages/CostGuide";
+import ProcessGuide from "./pages/ProcessGuide";
+import Header from "./component/Header";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStyle />
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path='/feasibility' element={<Feasibility />} />
+        <Route path='/patent-korea' element={<PatentKr />} />
+        <Route path='/patent-global' element={<PatentGb />} />
+        <Route path='/cost-guide' element={<CostGuide />} />
+        <Route path='/process-guide' element={<ProcessGuide />} />
+      </Routes>
+    </>
   );
-}
+};
 
 export default App;
+
