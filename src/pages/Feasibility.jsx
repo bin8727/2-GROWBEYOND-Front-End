@@ -1,6 +1,6 @@
 const Feasibility = () => {
   return (
-    <div>123</div>
+    <></>
   );
 };
 

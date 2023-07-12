@@ -1,0 +1,220 @@
+.home {
+  opacity: 1;
+  background-color: rgb(249, 250, 251);
+
+  &_container {
+    width: 100%;
+    opacity: 1;
+    background-color: rgb(222, 237, 251);
+    height: 100vw;
+  }
+
+  &_wrap {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 64rem;
+    padding-top: 3.5rem;
+
+    @media (min-width: 64rem) {
+      display: flex;
+    }
+  }
+
+  &_left {
+    @media (min-width: 64rem) {
+      min-width: 28.125rem;
+      padding-top: 5rem;
+    }
+  }
+
+  &_leftTitle {
+    padding-top: 4rem;
+    text-align: center;
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+
+    @media (min-width: 64rem) {
+      text-align: left;
+      font-size: 2.25rem;
+      line-height: 2.5rem;
+    }
+  }
+
+  &_leftDesc {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    text-align: center;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    opacity: 1;
+    color: rgb(75, 85, 99);
+
+    @media (min-width: 64rem) {
+      text-align: left;
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+  }
+
+  &_btnWrap {
+    display: flex;
+    justify-content: center;
+
+    @media (min-width: 64rem) {
+      justify-content: flex-start;
+    }
+  }
+
+  &_btn {
+    display: inline-block;
+    align-items: center;
+    border-radius: 0.75rem;
+    border-width: 0.0625rem;
+    border-color: transparent;
+    opacity: 1;
+    background-color: rgb(46, 120, 245);
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 0.0625rem 0.125rem 0 rgba(0, 0, 0, 0.05);
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 0.15s;
+
+    &:hover {
+      background-color: rgb(125, 171, 251);
+      cursor: pointer;
+    }
+  }
+
+  &_right {
+    position: relative;
+  }
+
+  &_rightContainer {
+    display: flex;
+    justify-content: center;
+  }
+
+  &_rightBackground {
+    height: 19.9375rem;
+    width: 24.375rem;
+
+    @media (min-width: 64rem) {
+      height: 37.5625rem;
+      width: 46.875rem;
+    }
+
+    span {
+      box-sizing: border-box;
+      display: block;
+      overflow: hidden;
+      width: initial;
+      height: initial;
+      background: none;
+      opacity: 1;
+      border: 0;
+      margin: 0;
+      padding: 0;
+      position: relative;
+
+      span {
+        box-sizing: border-box;
+        display: block;
+        width: initial;
+        height: initial;
+        background: none;
+        opacity: 1;
+        border: 0;
+        margin: 0;
+        padding: 0;
+        padding-top: 80%;
+      }
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        box-sizing: border-box;
+        padding: 0;
+        border: none;
+        margin: auto;
+        display: block;
+        width: 0;
+        height: 0;
+        min-width: 100%;
+        max-width: 100%;
+        min-height: 100%;
+        max-height: 100%;
+      }
+    }
+  }
+
+  &_rightImg {
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    height: 13.5rem;
+    width: 14.875rem;
+    transform: translate(-50%), rotate(0deg), skewX(0deg), skewY(0deg), scaleX(1), scaleY(1);
+
+    @media (min-width: 64rem) {
+      height: 25.25rem;
+      width: 27.75rem;
+    } 
+
+    span {
+      box-sizing: border-box;
+      display: block;
+      overflow: hidden;
+      width: initial;
+      height: initial;
+      background: none;
+      opacity: 1;
+      border: 0;
+      margin: 0;
+      padding: 0;
+      position: relative;
+
+      span {
+        box-sizing: border-box;
+        display: block;
+        width: initial;
+        height: initial;
+        background: none;
+        opacity: 1;
+        border: 0;
+        margin: 0;
+        padding: 0;
+        padding-top: 90.85457271364318%;
+      }
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        box-sizing: border-box;
+        padding: 0;
+        border: none;
+        margin: auto;
+        display: block;
+        width: 0;
+        height: 0;
+        min-width: 100%;
+        max-width: 100%;
+        min-height: 100%;
+        max-height: 100%;
+      }
+    }
+  }
+}

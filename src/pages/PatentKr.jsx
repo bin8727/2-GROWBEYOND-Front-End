@@ -1,6 +1,6 @@
 const PatentKr = () => {
   return (
-    <div>123</div>
+    <></>
   );
 };
 

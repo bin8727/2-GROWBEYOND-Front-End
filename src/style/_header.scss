@@ -1,0 +1,58 @@
+.header {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  height: 4rem;
+
+  &_wrap {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    height: 100%;
+    max-width: 64rem;
+    align-items: center;
+    // justify-content: space-between;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  &_logo {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+    
+    a {
+      opacity: 1;
+      color: rgb(55, 65, 81);
+
+      img {
+        width: 20%;
+        height: 20%;
+      }
+    }
+  }
+
+  &_nav {
+    display: hidden;
+    color: rgb(55, 65, 81);
+    opacity: 1;
+
+    @media (min-width: 64rem) {
+      display: flex;
+    }
+
+    a {
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      font-weight: 500;
+      opacity: 1;
+      color: rgb(107, 114,128);
+
+      &:nth-child(n+2) {
+        margin-left: 1rem;
+      }
+    }
+  }
+}
