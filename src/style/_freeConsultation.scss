@@ -1,0 +1,147 @@
+.freeconsultation {
+  padding-top: 4rem;
+
+  &_container {
+    opacity: 1;
+    background-color: rgb(249, 250, 251);
+  }
+
+  &_topContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 1;
+    background-color: rgb(229, 242, 255);
+    padding-top: 3rem;
+  }
+
+  &_topTitle {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    opacity: 1;
+    color: rgb(75, 89, 99);
+
+    @media (min-width: 64rem) {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+  }
+
+  &_topDesc {
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 2rem;
+
+    @media (min-width: 64rem) {
+      font-size: 1.875rem;
+      line-height: 2.25rem;
+    }
+  }
+
+  &_imgContainer {
+    height: 10rem;
+    width: 20rem;
+
+    @media (min-width: 64rem) {
+      height: 15.625rem;
+      width: 31.25rem;
+    }
+
+    span {
+      box-sizing: border-box;
+      display: block;
+      overflow: hidden;
+      width: initial;
+      height: initial;
+      background: none;
+      opacity: 1;
+      border: 0rem;
+      margin: 0rem;
+      padding: 0rem;
+      position: relative;
+
+      span {
+        box-sizing: border-box;
+        display: block;
+        width: initial;
+        height: initial;
+        background: none;
+        opacity: 1;
+        border: 0rem;
+        margin: 0rem;
+        padding: 50% 0rem 0rem;
+      }
+
+      img {
+        position: absolute;
+        inset: 0rem;
+        box-sizing: border-box;
+        padding: 0rem;
+        border: none;
+        margin: auto;
+        display: block;
+        width: 0rem;
+        height: 0rem;
+        min-width: 100%;
+        max-width: 100%;
+        min-height: 100%;
+        max-height: 100%;
+      }
+    }
+  }
+
+  &_middleWrap {
+    padding-top: 3rem;
+    text-align: center;
+  }
+
+  &_middleDesc {
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 2rem;
+
+    @media (min-width: 64rem) {
+      font-size: 1.875rem;
+      line-height: 2.25rem;
+    }
+  }
+
+  &_underArrow {
+    padding-top: 2rem;
+    padding-bottom: 0.5rem;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    opacity: 1;
+    color: rgb(107, 114, 128);
+
+    @media (min-width: 40rem) {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+    }
+
+    p {
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      font-weight: 500;
+
+      @media (min-width: 64rem) {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        font-weight: 600;
+      }
+    }
+
+    button {
+      cursor: pointer;
+      margin-top: 0.5rem;
+      background-color: transparent;
+      color:rgb(107, 114, 128);
+
+      img {
+        height: 1.5rem;
+        width: 1.5rem;
+      }
+    }
+  }
+}
