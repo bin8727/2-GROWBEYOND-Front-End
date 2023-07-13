@@ -34,8 +34,6 @@ const FreeConsoltation = () => {
     formData.append('file', file);
     formData.append('selectedOptions', selectedOptions)
 
-    navigate('/');
-
     axiosInstance.post('/api/boards/write/', formData) 
       .then((res) => {
         console.log(res);
@@ -43,6 +41,8 @@ const FreeConsoltation = () => {
       .catch((err) => {
         console.log(err);
       });
+
+      navigate('/');
   };
 
   return (
