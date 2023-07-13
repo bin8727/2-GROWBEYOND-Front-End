@@ -144,4 +144,325 @@
       }
     }
   }
+
+  &_formWrap {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 64rem;
+
+    @media (min-width: 40rem) {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  &_formTitle {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 600;
+
+    @media (min-width: 40rem) {
+      padding-left: 0rem;
+      padding-right: 0rem;
+      font-size: 1.875rem;
+      line-height: 2.25rem;
+    }
+  }
+
+  &_formTab {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    height: 0.5rem;
+    opacity: 1;
+    background-color: rgb(46 120 245);
+
+    @media (min-width: 64rem) {
+      margin-left: 0;
+      margin-right: 0;
+      height: 1rem;
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
+    }
+  }
+
+  &_formInformation {
+    opacity: 1;
+    background-color: rgb(255 255 255);
+    padding: 1rem;
+
+    @media (min-width: 40rem) {
+      padding: 1.5rem;
+    }
+
+    p:first-child {
+      font-size: 1.5rem;
+      line-height: 2rem;
+      font-weight: 700;
+    }
+  }
+
+  &_formName {
+    max-width: 37.5rem;
+    padding-top: 3rem;
+  }
+
+  &_formPwd {
+    max-width: 37.5rem;
+    padding-top: 3rem;
+  }
+
+  &_formMobileNum {
+    max-width: 37.5rem;
+    padding-top: 3rem;
+  }
+
+  &_formEmail {
+    max-width: 37.5rem;
+    padding-top: 3rem;
+  }
+
+  &_labelInfo {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    font-weight: 500;
+  }
+
+  &_inputBox {
+    position: relative;
+
+    input:first-child {
+      width: 100%;
+      border-radius: 0.75rem;
+      border-width: 1px;
+      opacity: 1;
+      border-color: rgb(107 114 128);
+      padding-left: 1rem;
+      padding-right: 1rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+
+      &::placeholder {
+        color: rgb(107 114 128);
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &_pDesc {
+    opacity: 0.6;
+    color: rgb(107 114 128);
+    font-size: .875rem;
+    line-height: 1.25rem;
+    padding-bottom: 0.5rem;
+  }
+
+  &_patentInfoWrap {
+    opacity: 1;
+    background-color: rgb(249 250 251);
+    padding-top: 1rem;
+  }
+
+  &_patentInfo {
+    opacity: 1;
+    background-color: rgb(255 255 255);
+    padding: 1.5rem;
+
+    p:first-child {
+      font-size: 1.5rem;
+      line-height: 2rem;
+      font-weight: 700;
+    }
+  }
+
+  &_selectBoxContainer {
+    margin-top: 3rem;
+  }
+
+  &_selectBox {
+    max-height: 25rem;
+    overflow-y: auto;
+    padding-top: 1rem;
+    max-height: 30.625rem;
+
+    @media (min-width: 40rem) {
+      max-height: 30.625rem;
+    }
+  }
+
+  &_select {
+    display: flex;
+    opacity: 1;
+    background-color: rgb(210 233 247);
+
+    &:nth-child(n+2) {
+      opacity: 1;
+      border-color: rgb(255 255 255);
+      border-top-width: 0.0625rem;
+      border-bottom-width: 0rem;
+    }
+  }
+
+  &_checkBoxWrap {
+    display: flex;
+    width: 5.5rem;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    background-color: transparent;
+
+    @media (min-width: 40rem) {
+      width: 7.5rem;
+    }
+  }
+
+  &_checkBox {
+    display: flex;
+    height: 1.25rem;
+    width: 1.25rem;
+    align-items: center;
+    justify-content: center;  
+    border-radius: 0.25rem;
+    border-width: 0.125rem;
+    opacity: 1;
+    border-color: rgb(156 163 175);
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &_selectDesc {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    text-align: center;
+    border-right-width: 0rem;
+    border-left-width: 0.0625rem;
+    opacity: 1;
+    border-color: rgb(255 255 255);
+
+    &.checked {
+      opacity: 1;
+      color: rgb(59 130 246);
+    }
+  }
+
+  &_textArea {
+    height: 9rem;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 0.5rem;
+    border-width: 0.0625rem;
+    opacity: 1;
+    border-color: rgb(107 114 128);
+    font-size: 0.75rem;
+
+    @media (min-width: 40rem) {
+      height: 5.3125rem;
+    }
+
+    &::placeholder {
+      color: rgb(107 114 128);
+      opacity: 0.5;
+    }
+  }
+
+  &_agreeWrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2rem;
+  }
+
+  &_agree {
+    height: 1.25rem;
+    width: 1.25rem;
+    border-radius: 0.25rem;
+    border-width: 0.125rem;
+    opacity: 1;
+    border-color: rgb(156 163 175);
+  }
+
+  &_agreeLabel {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    margin-right: 0;
+    margin-left: 0.5rem;
+  }
+
+  &_agreeCard {
+    background-color: none;
+    opacity: 1;
+    color: rgb(59 130 246);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &_submitWrap {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  &_submit {
+    display: inline-flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.75rem;
+    border-width: 0.0625rem;
+    border-color: transparent;
+    opacity: 1;
+    background-color: rgb(219 234 254);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+    color: rgb(46 120 245);
+    box-shadow: 0 0.0625rem 0.125rem 0 rgba(0,0,0,.05);
+    transition-property: color,background-color,border-color,text-decoration-color,fill,stroke;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-duration: 0.15s;
+
+    @media (min-width: 40rem) {
+      width: 12.5rem;
+    }
+
+    @media (min-width: 64rem) {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    &:disabled {
+      opacity: 1;
+      background-color: rgb(229 231 235);
+      color: rgb(156 163 175);
+      cursor: not-allowed;
+    }
+  }
+
+  &_bottom {
+    height: 4rem;
+    background-color: rgb(249 250 251);
+    opacity: 1;
+  }
 }
