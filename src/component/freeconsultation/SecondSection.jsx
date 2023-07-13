@@ -1,11 +1,22 @@
 import ButtonWrap from "./ButtonWrap";
-import { useState } from "react";
+import { useState,useRef } from "react";
+import File from '../../assets/file.svg';
 
 const SecondSection = () => {
   const [agreed, setAgreed] = useState(false);
+  const fileInputEl = useRef(null);
 
   const handleCheckbox = () => {
     setAgreed(!agreed);
+  };
+
+  const handleFileInputChange = (e) => {
+    const selectFile = e.target.files[0];
+    alert(selectFile.name);
+  };
+
+  const handleClick = () => {
+    fileInputEl.current.click();
   };
 
   return (
@@ -40,6 +51,24 @@ const SecondSection = () => {
             상담을 원하시는 내용을 적어주세요.
           </p>
           <textarea className="freeconsultation_textArea" />
+        </div>
+
+        <div className='freeconsultation_fileWrap'>
+          <div className='freeconsultation_labelInfo' htmlFor='file-upload'>첨부파일</div>
+          <input 
+            type="file"
+            ref={fileInputEl}
+            onChange={handleFileInputChange}
+            style={{ display: "none" }}
+          />
+          <button 
+            className='freeconsultation_fileBtn' 
+            type='button' 
+            onClick={handleClick}
+          >
+            <img src={File} alt='file' className="freeconsultation_fileIcon" />
+            <span>파일 선택</span>
+          </button>
         </div>
 
         <div className='freeconsultation_agreeWrap'>
