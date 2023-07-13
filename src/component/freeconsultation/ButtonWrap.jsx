@@ -19,6 +19,9 @@ const ButtonWrap = (props) => {
       isChecked: option.name === name ? checked : false,
     }));
     setOptions(updatedOptions);
+
+    const selectedOption = updatedOptions.find((option) => option.isChecked);
+    props.setSelectedOptions(selectedOption ? selectedOption.name : '');
   };
 
   return (

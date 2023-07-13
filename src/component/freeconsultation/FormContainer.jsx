@@ -29,6 +29,7 @@ const FormContainer = (props) => {
           file={props.file}
           setFile={props.setFile}
           handleSubmit={props.handleSubmit}
+          setSelectedOptions={props.setSelectedOptions}
         />
       </form>
     </div>

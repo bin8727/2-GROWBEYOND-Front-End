@@ -1,8 +1,8 @@
 import TopContainer from '../component/freeconsultation/TopContainer';
 import MiddleContainer from '../component/freeconsultation/MiddleContainer';
 import FormContainer from '../component/freeconsultation/FormContainer';
+import axiosInstance from '../instance';
 import { useState } from 'react';
-import axios from 'axios';
 
 
 const FreeConsoltation = () => {
@@ -14,9 +14,11 @@ const FreeConsoltation = () => {
   const [description, setDescription] = useState('');
   const [counsling, setCounsling] = useState('');
   const [file, setFile] = useState('');
+  const [selectedOptions, setSelectedOptions] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("Submit");
 
     const formData = new FormData();
     formData.append('name', name);
@@ -27,11 +29,15 @@ const FreeConsoltation = () => {
     formData.append('description', description);
     formData.append('counsling', counsling);
     formData.append('file', file);
+    formData.append('selectedOptions', selectedOptions)
 
-    axios.post('/api/boards/write/', formData) 
+    axiosInstance.post('/api/boards/write/', formData) 
       .then((res) => {
         console.log(res);
       })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
@@ -58,6 +64,8 @@ const FreeConsoltation = () => {
         file={file}
         setFile={setFile}
         handleSubmit={handleSubmit}
+        selectedOptions={selectedOptions}
+        setSelectedOptions={setSelectedOptions}
       />
 
       <div className='freeconsultation_bottom'></div>
