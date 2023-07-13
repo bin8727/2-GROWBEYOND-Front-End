@@ -1,4 +1,4 @@
-const FirstSection = () => {
+const FirstSection = (props) => {
   return (
     <>
       <div className='freeconsultation_formTab'></div>
@@ -14,8 +14,8 @@ const FirstSection = () => {
             <input 
               maxLength='50' 
               placeholder='예) 홍길동' 
-              // value={fields.username} 
-              // onChange={(e) => handleFieldChange('username', e.target.value)}
+              value={props.name}
+              onChange={(e) => props.setName(e.target.value)}
             />
           </div>
         </div>
@@ -30,8 +30,8 @@ const FirstSection = () => {
               type='password' 
               maxLength='50' 
               placeholder='********' 
-              // value={fields.password} 
-              // onChange={(e) => handleFieldChange('password', e.target.value)}
+              value={props.password}
+              onChange={(e) => props.setPassword(e.target.value)}
             />
           </div>
         </div>
@@ -46,8 +46,8 @@ const FirstSection = () => {
               type='tel' 
               maxLength='50' 
               placeholder='예) 01012345678' 
-              // value={fields.telephone} 
-              // onChange={(e) => handleFieldChange('telephone', e.target.value)}
+              value={props.telephone}
+              onChange={(e) => props.setTelephone(e.target.value)}
             />
           </div>
         </div>
@@ -62,8 +62,8 @@ const FirstSection = () => {
               type='email' 
               maxLength='50' 
               placeholder='예) patent@naver.com' 
-              // value={fields.email} 
-              // onChange={(e) => handleFieldChange('email', e.target.value)}
+              value={props.email}
+              onChange={(e) => props.setEmail(e.target.value)}
             />
           </div>
         </div>

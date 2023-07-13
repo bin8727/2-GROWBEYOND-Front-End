@@ -2,7 +2,7 @@ import ButtonWrap from "./ButtonWrap";
 import { useState,useRef } from "react";
 import File from '../../assets/file.svg';
 
-const SecondSection = () => {
+const SecondSection = (props) => {
   const [agreed, setAgreed] = useState(false);
   const fileInputEl = useRef(null);
 
@@ -31,7 +31,12 @@ const SecondSection = () => {
             정하지 않으셨다면 '미정'으로 입력해주세요.
           </p>
           <div className='freeconsultation_inputBox'>
-            <input maxLength='50' />
+            <input 
+              maxLength='50' 
+              placeholder="예) #배터리, #무선충전" 
+              value={props.title}
+              onChange={(e) => props.setTitle(e.target.value)}
+            />
           </div>
         </div>
               
@@ -42,7 +47,12 @@ const SecondSection = () => {
           <p className='freeconsultation_pDesc'>
             간단하게라도 적어주세요.
           </p>
-          <textarea className="freeconsultation_textArea" placeholder="첨부할 자료가 있는 경우 파일을 첨부해주세요." />
+          <textarea 
+            className="freeconsultation_textArea" 
+            placeholder="첨부할 자료가 있는 경우 파일을 첨부해주세요." 
+            value={props.description}
+            onChange={(e) => props.setDescription(e.target.value)}
+          />
         </div>
 
         <div className='freeconsultation_formMobileNum'>
@@ -50,7 +60,11 @@ const SecondSection = () => {
           <p className='freeconsultation_pDesc'>
             상담을 원하시는 내용을 적어주세요.
           </p>
-          <textarea className="freeconsultation_textArea" />
+          <textarea 
+            className="freeconsultation_textArea" 
+            value={props.counsling}
+            onChange={(e) => props.setCounsling(e.target.value)}
+          />
         </div>
 
         <div className='freeconsultation_fileWrap'>
@@ -58,7 +72,11 @@ const SecondSection = () => {
           <input 
             type="file"
             ref={fileInputEl}
-            onChange={handleFileInputChange}
+            value={props.file}
+            onChange={(e) => {
+              handleFileInputChange();
+              props.setFile(e.target.value);
+            }}
             style={{ display: "none" }}
           />
           <button 
@@ -87,9 +105,10 @@ const SecondSection = () => {
         <div className='freeconsultation_submitWrap'>
           <button 
             className='freeconsultation_submit' 
-            type='button' 
+            type='submit' 
             disabled={!agreed} 
             onClick={handleCheckbox}
+            onChange={props.handleSubmit}
           >
           상담 신청하기
           </button>

@@ -8,8 +8,8 @@ const ButtonWrap = (props) => {
     { id: 4, name: '화학', isChecked: false },
     { id: 5, name: '의약', isChecked: false },
     { id: 6, name: '바이오', isChecked: false },
-    { id: 6, name: '식품/음식', isChecked: false },
-    { id: 6, name: '기구/장치', isChecked: false },
+    { id: 7, name: '식품/음식', isChecked: false },
+    { id: 8, name: '기구/장치', isChecked: false },
   ]);
 
   const handleSelected = (event) => {
@@ -26,7 +26,7 @@ const ButtonWrap = (props) => {
       <label className='freeconsultation_labelInfo'>발명의 분야</label>
       <div className='freeconsultation_selectBox'>
         {options.map((option) => (
-          <div className='freeconsultation_select'>
+          <div className='freeconsultation_select' key={option.id}>
             <div className='freeconsultation_checkBoxWrap'>
               <input 
                 id={option.id}
