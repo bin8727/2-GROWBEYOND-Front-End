@@ -3,6 +3,7 @@ import MiddleContainer from '../component/freeconsultation/MiddleContainer';
 import FormContainer from '../component/freeconsultation/FormContainer';
 import axiosInstance from '../instance';
 import { useState } from 'react';
+import { useNavigate } from 'react-router';
 
 
 const FreeConsoltation = () => {
@@ -15,6 +16,8 @@ const FreeConsoltation = () => {
   const [counsling, setCounsling] = useState('');
   const [file, setFile] = useState('');
   const [selectedOptions, setSelectedOptions] = useState('');
+
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -30,6 +33,8 @@ const FreeConsoltation = () => {
     formData.append('counsling', counsling);
     formData.append('file', file);
     formData.append('selectedOptions', selectedOptions)
+
+    navigate('/');
 
     axiosInstance.post('/api/boards/write/', formData) 
       .then((res) => {
