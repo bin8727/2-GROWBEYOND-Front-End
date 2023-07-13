@@ -23,14 +23,9 @@
     align-items: center;
     margin-right: 1rem;
 
-    &--active {
-      opacity: 1;
-      color: rgb(55, 65, 81);
-
-      img {
-        width: 20%;
-        height: 20%;
-      }
+    img {
+      width: 20%;
+      height: 20%;
     }
   }
 
@@ -51,7 +46,7 @@
       color: rgb(107, 114,128);
 
       &:nth-child(n+2) {
-        margin-left: 1rem;
+        margin-left: 0.94rem;
       }
 
       &--active {
@@ -61,12 +56,3 @@
     }
   }
 }
-
-
-    
-
-//     a {
-      
-//     }
-//   }
-// }

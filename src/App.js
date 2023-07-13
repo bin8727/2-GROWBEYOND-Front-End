@@ -1,4 +1,4 @@
-import Header from "./component/Header";
+import Header from "./component/header/Header";
 import Router from "./Router";
 import './style/common.scss';
 
