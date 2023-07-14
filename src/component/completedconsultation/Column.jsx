@@ -9,7 +9,7 @@ const Column = () => {
       try {
         const response = await axiosInstance.get('/api/boards/write');
         console.log(response);
-        isSetData(response.data);
+        isSetData(response.data.results);
       } catch(err) {
         console.log(err);
       }

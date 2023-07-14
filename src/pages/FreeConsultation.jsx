@@ -44,9 +44,9 @@ const FreeConsoltation = () => {
       .catch((err) => {
         console.log(err);
       });
-      
+
       const newData = title;
-      setData(newData)
+      setData(newData);
 
       navigate('/completed-consultation');
   };
