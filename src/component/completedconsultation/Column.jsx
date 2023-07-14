@@ -8,7 +8,7 @@ const Column = () => {
 
   useEffect(() => {
     isSetData(allData);
-  }, []);
+  }, [allData]);
   
   const formData = (dateStr) => {
     const year = dateStr.slice(0, 4);
