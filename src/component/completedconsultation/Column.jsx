@@ -1,22 +1,25 @@
 import { useEffect, useState } from "react";
 import axiosInstance from "../../instance";
+import DataContext from "../../context";
+import { useContext } from "react";
 
 const Column = () => {
   const [isData, isSetData] = useState(null);
+  const { allData } = useContext(DataContext);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axiosInstance.get('/api/board/write');
-        console.log(response);
-        isSetData(response.data);
-      } catch(err) {
-        console.log(err);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await axiosInstance.get('/api/board/write');
+  //       console.log(response);
+  //       isSetData(response.data);
+  //     } catch(err) {
+  //       console.log(err);
+  //     }
+  //   };
   
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
   
   const formData = (dateStr) => {
     const year = dateStr.slice(0, 4);
@@ -40,7 +43,7 @@ const Column = () => {
           </thead>
           {isData ? (
             <tbody>
-            {isData.map((row, index) => (
+            {allData.map((row, index) => (
               <tr key={index}>
                 <td>{row.InventionName}</td>
                 <td>{row.Applicant}</td>
