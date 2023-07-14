@@ -4,8 +4,8 @@ import SecondSection from "./SecondSection";
 
 const FormContainer = (props) => {
   return (
-    <div className="freeconsultation_container">
-      <form className='freeconsultation_formWrap' onSubmit={props.handleSubmit}>
+    <div className="freeconsultation__form-container">
+      <form className='freeconsultation__form-wrap' onSubmit={props.handleSubmit}>
         <FormTitle />
 
         <FirstSection 

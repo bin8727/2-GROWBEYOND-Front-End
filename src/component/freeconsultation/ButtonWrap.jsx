@@ -25,22 +25,22 @@ const ButtonWrap = (props) => {
   };
 
   return (
-    <div className='freeconsultation_selectBoxContainer'>
-      <label className='freeconsultation_labelInfo'>발명의 분야</label>
-      <div className='freeconsultation_selectBox'>
+    <div className='freeconsultation__selectbox-container'>
+      <label className='freeconsultation__label-info'>발명의 분야</label>
+      <div className='freeconsultation__selectbox'>
         {options.map((option) => (
-          <div className='freeconsultation_select' key={option.id}>
-            <div className='freeconsultation_checkBoxWrap'>
+          <div className='freeconsultation__select' key={option.id}>
+            <div className='freeconsultation__checkbox-container'>
               <input 
                 id={option.id}
-                className='freeconsultation_checkBox' 
+                className='freeconsultation__checkbox' 
                 type='checkbox' 
                 name={option.name}
                 checked={option.isChecked}
                 onChange={handleSelected}
               />
             </div>
-            <p className={`freeconsultation_selectDesc ${option.isChecked ? 'checked' : ''}`}>{option.name}</p>
+            <p className={`freeconsultation__select-desc ${option.isChecked ? 'checked' : ''}`}>{option.name}</p>
           </div>
         ))}
       </div>

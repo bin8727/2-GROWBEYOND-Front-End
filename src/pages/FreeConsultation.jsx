@@ -73,7 +73,7 @@ const FreeConsoltation = () => {
         setSelectedOptions={setSelectedOptions}
       />
 
-      <div className='freeconsultation_bottom'></div>
+      <div className='freeconsultation__bottom'></div>
     </div>
   );
 };

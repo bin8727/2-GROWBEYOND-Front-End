@@ -24,17 +24,17 @@ const SecondSection = (props) => {
   };
 
   return (
-    <div className="freeconsultation_patentInfoWrap">
-      <div className="freeconsultation_formTab"></div>
-      <section className="freeconsultation_patentInfo">
+    <div className="freeconsultation__patent-info-container">
+      <div className="freeconsultation__form-tab"></div>
+      <section className="freeconsultation__patent-info">
         <p>2. 특허 정보</p>
 
-        <div className="freeconsultation_formMobileNum">
-          <label className="freeconsultation_labelInfo">발명의 명칭</label>
-          <p className="freeconsultation_pDesc">
+        <div className="freeconsultation__form-info-container">
+          <label className="freeconsultation__label-info">발명의 명칭</label>
+          <p className="freeconsultation__p-desc">
             정하지 않으셨다면 '미정'으로 입력해주세요.
           </p>
-          <div className="freeconsultation_inputBox">
+          <div className="freeconsultation__input-box">
             <input
               maxLength="50"
               placeholder="예) #배터리, #무선충전"
@@ -46,34 +46,34 @@ const SecondSection = (props) => {
 
         <ButtonWrap setSelectedOptions={props.setSelectedOptions} />
 
-        <div className="freeconsultation_formMobileNum">
-          <label className="freeconsultation_labelInfo">발명의 특징</label>
-          <p className="freeconsultation_pDesc">간단하게라도 적어주세요.</p>
+        <div className="freeconsultation__form-info-container">
+          <label className="freeconsultation__label-info">발명의 특징</label>
+          <p className="freeconsultation__p-desc">간단하게라도 적어주세요.</p>
           <textarea
-            className="freeconsultation_textArea"
+            className="freeconsultation__textarea"
             placeholder="간단하게라도 적어주세요."
             value={props.description}
             onChange={(e) => props.setDescription(e.target.value)}
           />
         </div>
 
-        <div className="freeconsultation_formMobileNum">
-          <label className="freeconsultation_labelInfo">상담 내용</label>
-          <p className="freeconsultation_pDesc">상담을 원하시는 내용을 적어주세요.</p>
+        <div className="freeconsultation__form-info-container">
+          <label className="freeconsultation__label-info">상담 내용</label>
+          <p className="freeconsultation__p-desc">상담을 원하시는 내용을 적어주세요.</p>
           <textarea
-            className="freeconsultation_textArea"
+            className="freeconsultation__textarea"
             value={props.counsling}
             onChange={(e) => props.setCounsling(e.target.value)}
           />
         </div>
 
-        <div className="freeconsultation_fileWrap">
-          <div className="freeconsultation_labelInfo" htmlFor="file-upload">
+        <div className="freeconsultation__file-container">
+          <div className="freeconsultation__label-info" htmlFor="file-upload">
             첨부파일
           </div>
           <input type="file" ref={fileInputEl} onChange={handleFileInputChange} style={{ display: "none" }} />
-          <button className="freeconsultation_fileBtn" type="button" onClick={handleClick}>
-            <img src={File} alt="file" className="freeconsultation_fileIcon" />
+          <button className="freeconsultation__file-btn" type="button" onClick={handleClick}>
+            <img src={File} alt="file" className="freeconsultation__file-icon" />
             <span>파일 선택</span>
           </button>
           {selectedFile && (
@@ -84,19 +84,19 @@ const SecondSection = (props) => {
           )}
         </div>
 
-        <div className="freeconsultation_agreeWrap">
-          <input className="freeconsultation_agree" type="checkbox" onClick={handleCheckbox} />
-          <label className="freeconsultation_agreeLabel">
+        <div className="freeconsultation__agree-container">
+          <input className="freeconsultation__agree" type="checkbox" onClick={handleCheckbox} />
+          <label className="freeconsultation__agree-label">
             상담에 필요한{" "}
-            <button className="freeconsultation_agreeCard" type="button">
+            <button className="freeconsultation__agree-card" type="button">
               개인정보 수집
             </button>{" "}
             동의
           </label>
         </div>
 
-        <div className="freeconsultation_submitWrap">
-          <button className="freeconsultation_submit" type="submit" disabled={!agreed} onClick={props.handleSubmit}>
+        <div className="freeconsultation__submit-container">
+          <button className="freeconsultation__submit" type="submit" disabled={!agreed} onClick={props.handleSubmit}>
             상담 신청하기
           </button>
         </div>

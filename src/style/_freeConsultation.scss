@@ -1,12 +1,7 @@
 .freeconsultation {
   padding-top: 4rem;
 
-  &_container {
-    opacity: 1;
-    background-color: rgb(249, 250, 251);
-  }
-
-  &_topContent {
+  &__top-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,7 +10,7 @@
     padding-top: 3rem;
   }
 
-  &_topTitle {
+  &__top-title {
     font-size: 0.875rem;
     line-height: 1.25rem;
     font-weight: 500;
@@ -28,7 +23,7 @@
     }
   }
 
-  &_topDesc {
+  &__top-desc {
     text-align: center;
     font-size: 1.5rem;
     line-height: 2rem;
@@ -39,7 +34,7 @@
     }
   }
 
-  &_imgContainer {
+  &__img {
     height: 10rem;
     width: 20rem;
 
@@ -48,55 +43,28 @@
       width: 31.25rem;
     }
 
-    span {
+    img {
+      position: absolute;
+      inset: 0rem;
       box-sizing: border-box;
-      display: block;
-      overflow: hidden;
-      width: initial;
-      height: initial;
-      background: none;
-      opacity: 1;
-      border: 0rem;
-      margin: 0rem;
       padding: 0rem;
-      position: relative;
-
-      span {
-        box-sizing: border-box;
-        display: block;
-        width: initial;
-        height: initial;
-        background: none;
-        opacity: 1;
-        border: 0rem;
-        margin: 0rem;
-        padding: 50% 0rem 0rem;
-      }
-
-      img {
-        position: absolute;
-        inset: 0rem;
-        box-sizing: border-box;
-        padding: 0rem;
-        border: none;
-        margin: auto;
-        display: block;
-        width: 0rem;
-        height: 0rem;
-        min-width: 100%;
-        max-width: 100%;
-        min-height: 100%;
-        max-height: 100%;
-      }
+      border: none;
+      margin: auto;
+      display: block;
+      width: 0rem;
+      height: 0rem;
+      min-width: 100%;
+      max-width: 100%;
+      min-height: 100%;
+      max-height: 100%;
     }
   }
 
-  &_middleWrap {
+  &__middle-container {
     padding-top: 3rem;
     text-align: center;
   }
-
-  &_middleDesc {
+  &__middle-desc {
     text-align: center;
     font-size: 1.5rem;
     line-height: 2rem;
@@ -106,8 +74,7 @@
       line-height: 2.25rem;
     }
   }
-
-  &_underArrow {
+  &__under-arrow {
     padding-top: 2rem;
     padding-bottom: 0.5rem;
     font-size: 1.125rem;
@@ -145,7 +112,12 @@
     }
   }
 
-  &_formWrap {
+  &__form-container {
+    opacity: 1;
+    background-color: rgb(249, 250, 251);
+  }
+
+  &__form-wrap {
     margin-left: auto;
     margin-right: auto;
     max-width: 64rem;
@@ -156,7 +128,7 @@
     }
   }
 
-  &_formTitle {
+  &__form-title {
     padding-left: 1rem;
     padding-right: 1rem;
     padding-top: 2rem;
@@ -173,7 +145,7 @@
     }
   }
 
-  &_formTab {
+  &__form-tab {
     margin-left: 1rem;
     margin-right: 1rem;
     height: 0.5rem;
@@ -189,7 +161,7 @@
     }
   }
 
-  &_formInformation {
+  &__form-user-info {
     opacity: 1;
     background-color: rgb(255 255 255);
     padding: 1rem;
@@ -205,33 +177,26 @@
     }
   }
 
-  &_formName {
+  &__form-info-container {
     max-width: 37.5rem;
     padding-top: 3rem;
   }
 
-  &_formPwd {
-    max-width: 37.5rem;
-    padding-top: 3rem;
-  }
-
-  &_formMobileNum {
-    max-width: 37.5rem;
-    padding-top: 3rem;
-  }
-
-  &_formEmail {
-    max-width: 37.5rem;
-    padding-top: 3rem;
-  }
-
-  &_labelInfo {
+  &__label-info {
     font-size: 1.125rem;
     line-height: 1.75rem;
     font-weight: 500;
   }
 
-  &_inputBox {
+  &__p-desc {
+    opacity: 0.6;
+    color: rgb(107 114 128);
+    font-size: .875rem;
+    line-height: 1.25rem;
+    padding-bottom: 0.5rem;
+  }
+
+  &__input-box {
     position: relative;
 
     input:first-child {
@@ -252,21 +217,13 @@
     }
   }
 
-  &_pDesc {
-    opacity: 0.6;
-    color: rgb(107 114 128);
-    font-size: .875rem;
-    line-height: 1.25rem;
-    padding-bottom: 0.5rem;
-  }
-
-  &_patentInfoWrap {
+  &__patent-info-container {
     opacity: 1;
     background-color: rgb(249 250 251);
     padding-top: 1rem;
   }
 
-  &_patentInfo {
+  &__patent-info {
     opacity: 1;
     background-color: rgb(255 255 255);
     padding: 1.5rem;
@@ -278,11 +235,11 @@
     }
   }
 
-  &_selectBoxContainer {
+  &__selectbox-container {
     margin-top: 3rem;
   }
 
-  &_selectBox {
+  &__selectbox {
     max-height: 25rem;
     overflow-y: auto;
     padding-top: 1rem;
@@ -293,7 +250,7 @@
     }
   }
 
-  &_select {
+  &__select {
     display: flex;
     opacity: 1;
     background-color: rgb(210 233 247);
@@ -306,7 +263,7 @@
     }
   }
 
-  &_checkBoxWrap {
+  &__checkbox-container {
     display: flex;
     width: 5.5rem;
     flex-shrink: 0;
@@ -323,7 +280,7 @@
     }
   }
 
-  &_checkBox {
+  &__checkbox {
     display: flex;
     height: 1.25rem;
     width: 1.25rem;
@@ -339,7 +296,7 @@
     }
   }
 
-  &_selectDesc {
+  &__select-desc {
     display: flex;
     width: 100%;
     align-items: center;
@@ -360,7 +317,7 @@
     }
   }
 
-  &_textArea {
+  &__textarea {
     height: 9rem;
     width: 100%;
     max-width: 600px;
@@ -380,14 +337,53 @@
     }
   }
 
-  &_agreeWrap {
+  &__file-container {
+    padding-top: 3rem;
+  }
+
+  &__file-btn {
+    margin-top: 0.25rem;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 0.75rem;
+    border-width: 0.0625rem;
+    border-color: transparent;
+    opacity: 1;
+    background-color: rgb(46 120 245);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+    color: rgb(255 255 255);
+    box-shadow: 0 0.0625rem 0.125rem 0 rgba(0,0,0,0.05);
+    transition-property: color,background-color,border-color,text-decoration-color,fill,stroke;
+    transition-timing-function: cubic-bezier(0.4,0,0.2,1);
+    transition-duration: 0.15s;
+
+    span {
+      margin-right: 0;
+      margin-left: 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 400;
+    }
+  }
+
+  &__file-icon {
+    height: 1.25rem;
+    width: 1.25rem;
+  }
+
+  &__agree-container {
     display: flex;
     align-items: center;
     justify-content: center;
     padding-top: 2rem;
   }
 
-  &_agree {
+  &__agree {
     height: 1.25rem;
     width: 1.25rem;
     border-radius: 0.25rem;
@@ -396,7 +392,7 @@
     border-color: rgb(156 163 175);
   }
 
-  &_agreeLabel {
+  &__agree-label {
     font-size: 0.875rem;
     line-height: 1.25rem;
     font-weight: 500;
@@ -404,7 +400,7 @@
     margin-left: 0.5rem;
   }
 
-  &_agreeCard {
+  &__agree-card {
     background-color: none;
     opacity: 1;
     color: rgb(59 130 246);
@@ -414,13 +410,13 @@
     }
   }
 
-  &_submitWrap {
+  &__submit-container {
     margin-top: 1.5rem;
     display: flex;
     justify-content: center;
   }
 
-  &_submit {
+  &__submit {
     display: inline-flex;
     width: 100%;
     align-items: center;
@@ -460,48 +456,9 @@
     }
   }
 
-  &_bottom {
+  &__bottom {
     height: 4rem;
     background-color: rgb(249 250 251);
     opacity: 1;
-  }
-
-  &_fileWrap {
-    padding-top: 3rem;
-  }
-
-  &_fileBtn {
-    margin-top: 0.25rem;
-    display: inline-flex;
-    align-items: center;
-    border-radius: 0.75rem;
-    border-width: 0.0625rem;
-    border-color: transparent;
-    opacity: 1;
-    background-color: rgb(46 120 245);
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    font-size: 1rem;
-    line-height: 1.5rem;
-    font-weight: 600;
-    color: rgb(255 255 255);
-    box-shadow: 0 0.0625rem 0.125rem 0 rgba(0,0,0,0.05);
-    transition-property: color,background-color,border-color,text-decoration-color,fill,stroke;
-    transition-timing-function: cubic-bezier(0.4,0,0.2,1);
-    transition-duration: 0.15s;
-
-    span {
-      margin-right: 0;
-      margin-left: 0.5rem;
-      font-size: 0.75rem;
-      font-weight: 400;
-    }
-  }
-
-  &_fileIcon {
-    height: 1.25rem;
-    width: 1.25rem;
   }
 }
