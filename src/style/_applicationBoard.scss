@@ -1,0 +1,164 @@
+.application-board {
+  padding-top: 4rem;
+
+  &__top-container {
+    width: 100%;
+    opacity: 1;
+    background-color: rgb(249 250 251);
+    padding-bottom: 2rem;
+    padding-top: 8rem;
+  }
+
+  &__top-title-container {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    max-width: 90rem;
+  }
+
+  &__top-title-wrap {
+    position: relative;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__top-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__h2 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+
+    @media (min-width: 64rem) {
+      font-size: 2.25rem;
+      line-height: 2.5rem;
+    }
+  }
+
+  &__p {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 1.5rem;
+    text-align: center;
+    font-weight: 500;
+  }
+
+  &__span {
+    color:rgb(46 120 245)
+  }
+
+  &__middle-container {
+    opacity: 1;
+    background-color: rgb(249, 250, 251);
+  }
+
+  &__middle-wrap {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 64rem;
+
+    @media (min-width: 40rem) {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  &__column-tab {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    height: 0.5rem;
+    opacity: 1;
+    background-color: rgb(46 120 245);
+
+    @media (min-width: 64rem) {
+      margin-left: 0;
+      margin-right: 0;
+      height: 1rem;
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
+    }
+  }
+
+  &__column {
+    opacity: 1;
+    background-color: rgb(255 255 255);
+    padding: 1rem;
+
+    @media (min-width: 40rem) {
+      padding: 1.5rem;
+    }
+  }
+
+  &__table {
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.15);
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__table th {
+    text-align: center;
+  }
+
+  &__table td {
+    white-space: normal;
+    max-width: 30rem;
+    word-break: break-all;
+
+    &:nth-child(n+3) {
+      text-align: center;
+    }
+  }
+  
+  &__table th, &__table td {
+    border: 0.125rem solid #e5e5e5;
+    padding: 1rem;
+  }
+  
+  &__table tbody td:first-child {
+    font-weight: bold;
+    
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  
+  &__table tbody tr {
+    border-bottom: 0.125rem solid #e5e5e5;
+  }
+  
+  &__table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  
+  &__table tbody tr:nth-child(even) {
+    background-color: #f5f5f5;
+  }
+  
+  &__table thead {
+    background-color: #f9fafb;
+  }
+  
+  &__table thead th {
+    color: #45595f;
+    font-weight: 600;
+    padding: 1rem;
+  }
+  
+  @media screen and (max-width: 640px) {
+    &__table {
+      overflow-x: auto;
+    }
+  }
+  
+}
