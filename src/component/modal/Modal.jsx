@@ -55,7 +55,7 @@ const Modal = ({ selectData, updateData, onClose }) => {
     } else {
     return (
       <div>
-        <label htmlFor="password-modal">비밀번호: </label>
+        <label htmlFor="password-modal">신청할 때 적으신 이메일을 적어주세요: </label>
         <input
           type="password"
           id="password-modal"
@@ -63,7 +63,7 @@ const Modal = ({ selectData, updateData, onClose }) => {
           onChange={(e) => setPassword(e.target.value)}
         />
         <button onClick={handlePasswordSubmit}>확인</button>
-        {validPassword === false && <p>비밀번호가 다릅니다.</p>}
+        {validPassword === false && <p>이메일이 다릅니다.</p>}
       </div>
       );
     }
