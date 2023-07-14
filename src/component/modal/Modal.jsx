@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axiosInstance from '../../instance';
 
-const Modal = ({ data, updateData, onClose, post_pk }) => {
+const Modal = ({ data, updateData, onClose }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [tempData, setTempData] = useState(data);
 
@@ -18,7 +18,7 @@ const Modal = ({ data, updateData, onClose, post_pk }) => {
 
   const handleSaveClick = async () => {
     try {
-      const response = await axiosInstance.put(`/api/boards/detail/${post_pk}/`, data);
+      const response = await axiosInstance.put(`/api/boards/detail/pk/`, data);
       updateData(response.data);
       setIsEditing(false);
     } catch (err) {

@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Modal from "../modal/Modal";
-import axiosInstance from '../../instance';
 
 const Column = () => {
   const [data, setData] = useState([
@@ -48,16 +47,6 @@ const Column = () => {
     },
   ]);
   const [selectData, setSelectData] = useState(null);
-  const [postPk, setPostPk] = useState(null);
-
-  const fetchPk = async () => {
-    try {
-      const response = await axiosInstance.get('/api/boards/write/');
-      setPostPk(response.data.post_pk);
-    } catch(err) {
-      console.log(err);
-    }
-  };
 
   const onSelectRow = (row) => {
     setSelectData(row);
@@ -74,10 +63,6 @@ const Column = () => {
           item.ApplicationDate === updateData.ApplicationDate ? 
           updateData : item));
   };
-
-  useEffect(() => {
-    fetchPk();
-  }, []);
   
   const formData = (dateStr) => {
     const year = dateStr.slice(0, 4);
@@ -92,7 +77,7 @@ const Column = () => {
       {selectData && (
         <>
         <div className="small-window-backdrop" onClick={closeSmallWindow}></div>
-        <Modal data={selectData} post_pk={postPk} onClose={closeSmallWindow} updateData={updateData} />
+        <Modal data={selectData} onClose={closeSmallWindow} updateData={updateData} />
         </>
       )}
       <div className='application-board__column-tab'></div>
