@@ -57,12 +57,13 @@ const Modal = ({ selectData, updateData, onClose }) => {
       <div>
         <label htmlFor="password-modal">신청할 때 적으신 이메일을 적어주세요: </label>
         <input
-          type="password"
+          type="email"
           id="password-modal"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
         <button className="small-window__btn" onClick={handlePasswordSubmit}>확인</button>
+        <button className="small-window__btn" onClick={onClose}>닫기</button>
         {validPassword === false && <p>이메일이 다릅니다.</p>}
       </div>
       );
