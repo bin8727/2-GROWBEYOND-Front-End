@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 const Modal = ({ selectData, updateData, onClose }) => {
   const [tempData, setTempData] = useState(selectData);
   const [password, setPassword] = useState('');
-  const [validPassword, setValidPassword] = useState(true);
+  const [validPassword, setValidPassword] = useState(false);
   
   const checkLogin = (input) => {
     if (input === selectData.email) {
