@@ -81,20 +81,17 @@ const Modal = ({ selectData, updateData, onClose }) => {
             발명의 명칭: 
             <div className="small-window__invention-name__container">
               {
-              isEditing ? renderInputField('InventionName') : selectData.InventionName
+              isEditing ? renderInputField('InventionName') : selectData.title
               }
             </div>
           </div>
           <div className="small-window__invention__container">
             출원인: {
-              isEditing ? renderInputField('Applicant') : selectData.Applicant
+              isEditing ? renderInputField('Applicant') : selectData.name
             }
           </div>
           <div className="small-window__invention__container">
-            출원상태: {selectData.RegistrationStatus}
-          </div>
-          <div className="small-window__invention__container">
-            출원일: {formData(selectData.ApplicationDate)}
+            출원일: {formData(selectData.created_at)}
           </div>
         </>
       );
