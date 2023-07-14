@@ -11,7 +11,7 @@ const Column = () => {
       try {
         const response = await axiosInstance.get('/api/boards/list');
         console.log(response);
-        SetIsData(response.data.results);
+        SetIsData(response.data);
       } catch(err) {
         console.log(err);
       }
