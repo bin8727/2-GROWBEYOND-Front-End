@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router";
 import axiosInstance from '../../instance';
+import { useParams } from "react-router";
 
 const useQuery = () => {
   return new URLSearchParams(useLocation().search);
@@ -12,8 +13,7 @@ const Modal = ({ selectData, updateData, onClose }) => {
   const [password, setPassword] = useState('');
   const [validPassword, setValidPassword] = useState(false);
 
-  const query = useQuery();
-  const pk = query.get('post_pk');
+  const { pk } = useParams();
 
   const checkPassword = (inputPassword) => {
     if (inputPassword === pk) {
@@ -56,7 +56,7 @@ const Modal = ({ selectData, updateData, onClose }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axiosInstance.get(`/api/boards/list/1/`);
+        const response = await axiosInstance.get(`/api/boards/list/${pk}/`);
         console.log(response);
       } catch(err) {
         console.log(err);
