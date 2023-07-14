@@ -32,7 +32,7 @@ const Column = () => {
     SetIsData(
       isData.map(
         item => 
-          item.ApplicationDate === updateData.ApplicationDate ? 
+          item.created_at === updateData.created_at ? 
           updateData : item));
   };
   
@@ -43,7 +43,7 @@ const Column = () => {
     return `${year}년 ${month}월 ${day}일`;
   };
 
-  const columns = ['발명의 명칭', '출원인', '출원상태', '출원일'];
+  const columns = ['발명의 명칭', '출원인', '출원일'];
   return (
     <>
       {selectData && (
@@ -68,10 +68,9 @@ const Column = () => {
             <tbody>
             {isData.map((row, index) => (
               <tr key={index}>
-                <td onClick={() => {onSelectRow(row)}}>{row.InventionName}</td>
-                <td>{row.Applicant}</td>
-                <td>{row.RegistrationStatus}</td>
-                <td>{formData(row.ApplicationDate)}</td>
+                <td onClick={() => {onSelectRow(row)}}>{row.title}</td>
+                <td>{row.name}</td>
+                <td>{formData(row.created_at)}</td>
               </tr>
             ))}
           </tbody>
