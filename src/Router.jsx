@@ -11,7 +11,8 @@ import CompletedConsultation from './pages/CompletedConsultation';
 import DataContext from './context';
 
 const Router = () => {
-  const [data, setData, allData, setAllData] = useState('');
+  const [data, setData] = useState('');
+  const [allData, setAllData] = useState('');
 
   return (
     <DataContext.Provider value={{data, setData, allData, setAllData}}>
