@@ -2,8 +2,9 @@ import TopContainer from '../component/freeconsultation/TopContainer';
 import MiddleContainer from '../component/freeconsultation/MiddleContainer';
 import FormContainer from '../component/freeconsultation/FormContainer';
 import axiosInstance from '../instance';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router';
+import DataContext from '../context';
 
 
 const FreeConsoltation = () => {
@@ -18,6 +19,7 @@ const FreeConsoltation = () => {
   const [selectedOptions, setSelectedOptions] = useState('');
 
   const navigate = useNavigate();
+  const { data, setData } = useContext(DataContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -41,6 +43,9 @@ const FreeConsoltation = () => {
       .catch((err) => {
         console.log(err);
       });
+
+      const newData = title;
+      setData(newData);
 
       navigate('/completed-consultation');
   };
@@ -71,6 +76,7 @@ const FreeConsoltation = () => {
         handleSubmit={handleSubmit}
         selectedOptions={selectedOptions}
         setSelectedOptions={setSelectedOptions}
+        // fetchData={fetchData}
       />
 
       <div className='freeconsultation__bottom'></div>
