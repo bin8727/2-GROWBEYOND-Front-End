@@ -18,7 +18,7 @@ const Modal = ({ data, updateData, onClose }) => {
 
   const handleSaveClick = async () => {
     try {
-      const response = await axiosInstance.put(`/api/boards/detail/pk/`, data);
+      const response = await axiosInstance.put(`/api/boards/detail/86/`, data);
       updateData(response.data);
       setIsEditing(false);
     } catch (err) {
@@ -33,6 +33,7 @@ const Modal = ({ data, updateData, onClose }) => {
   const renderInputField = (field) => {
     return (
       <input
+      className="small-window__input"
       type="text"
       value={tempData[field]}
       onChange={(e) => {
@@ -52,10 +53,13 @@ const Modal = ({ data, updateData, onClose }) => {
           <button onClick={handleEditClick}>수정하기</button>
       )}
       <h3>작은 창</h3>
-      <div>
-        발명의 명칭: {
+      <div className="small-window__invention__container">
+        발명의 명칭: 
+        <div className="small-window__invention-name__container">
+        {
         isEditing ? renderInputField('InventionName') : data.InventionName
         }
+        </div>
       </div>
       <div>
         출원인: {
