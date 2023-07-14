@@ -20,7 +20,7 @@ const FreeConsoltation = () => {
   const [isAgreed, setIsAgreed] = useState(false);
 
   const navigate = useNavigate();
-  const { data, setData, pwd, setPwd } = useContext(DataContext);
+  const { data, setData } = useContext(DataContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -47,8 +47,6 @@ const FreeConsoltation = () => {
 
       const newData = title;
       setData(newData);
-      const newPwd = password;
-      setPwd(newPwd);
 
       navigate('/completed-consultation');
   };

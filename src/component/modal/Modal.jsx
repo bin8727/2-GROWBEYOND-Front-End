@@ -1,6 +1,10 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router";
 import axiosInstance from '../../instance';
-import DataContext from "../../context";
+
+const useQuery = () => {
+  return new URLSearchParams(useLocation().search);
+};
 
 const Modal = ({ selectData, updateData, onClose }) => {
   const [isEditing, setIsEditing] = useState(false);
@@ -8,10 +12,11 @@ const Modal = ({ selectData, updateData, onClose }) => {
   const [password, setPassword] = useState('');
   const [validPassword, setValidPassword] = useState(false);
 
-  const { pwd } = useContext(DataContext);
+  const query = useQuery();
+  const pk = query.get('pk');
 
   const checkPassword = (inputPassword) => {
-    if (inputPassword === pwd) {
+    if (inputPassword === pk) {
       return true;
     } else {
       return false;
@@ -40,13 +45,26 @@ const Modal = ({ selectData, updateData, onClose }) => {
 
   const handleSaveClick = async () => {
     try {
-      const response = await axiosInstance.put(`/api/boards/list/87/`, selectData);
+      const response = await axiosInstance.put(`/api/boards/list/${pk}/`, selectData);
       updateData(response.data);
       setIsEditing(false);
     } catch (err) {
       console.log(err);
     }
   };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axiosInstance.get(`/api/boards/list/${pk}`);
+        console.log(response);
+      } catch(err) {
+        console.log(err);
+      }
+    };
+  
+    fetchData();
+  }, []);
 
   useEffect(() => {
     setTempData(selectData);
