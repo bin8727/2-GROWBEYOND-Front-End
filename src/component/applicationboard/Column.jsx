@@ -1,8 +1,8 @@
 import { useState } from "react";
-import Modal from "../modal/Modal";
+import Modal from "../modal/Modal";;
 
 const Column = () => {
-  const [data, setData] = useState([
+  const [isData, SetIsData] = useState([
     {
       "ApplicationDate": "20060109",
       "InventionName": "황산아염 고착을 방지한 태양열 배터리 충전시스템",
@@ -57,8 +57,8 @@ const Column = () => {
   };
 
   const updateData = (updateData) => {
-    setData(
-      data.map(
+    SetIsData(
+      isData.map(
         item => 
           item.ApplicationDate === updateData.ApplicationDate ? 
           updateData : item));
@@ -77,9 +77,11 @@ const Column = () => {
       {selectData && (
         <>
         <div className="small-window-backdrop" onClick={closeSmallWindow}></div>
-        <Modal data={selectData} onClose={closeSmallWindow} updateData={updateData} />
+        <Modal selectData={selectData} onClose={closeSmallWindow} updateData={updateData} />
         </>
       )}
+      
+
       <div className='application-board__column-tab'></div>
       <section className='application-board__column'>
         <table className="application-board__table">
@@ -90,9 +92,9 @@ const Column = () => {
               ))}
             </tr>
           </thead>
-          {data ? (
+          {isData ? (
             <tbody>
-            {data.map((row, index) => (
+            {isData.map((row, index) => (
               <tr key={index}>
                 <td onClick={() => {onSelectRow(row)}}>{row.InventionName}</td>
                 <td>{row.Applicant}</td>

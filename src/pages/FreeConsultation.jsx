@@ -45,7 +45,7 @@ const FreeConsoltation = () => {
         console.log(err);
       });
 
-      const newData = title;
+      const newData = password;
       setData(newData);
 
       navigate('/completed-consultation');

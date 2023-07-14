@@ -1,9 +1,31 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import axiosInstance from '../../instance';
+import DataContext from "../../context";
 
-const Modal = ({ data, updateData, onClose }) => {
+const Modal = ({ selectData, updateData, onClose }) => {
   const [isEditing, setIsEditing] = useState(false);
-  const [tempData, setTempData] = useState(data);
+  const [tempData, setTempData] = useState(selectData);
+  const [password, setPassword] = useState('');
+  const [validPassword, setValidPassword] = useState(false);
+
+  const { data, setData } = useContext(DataContext);
+
+  const checkPassword = (inputPassword) => {
+    if (inputPassword === data) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  const handlePasswordSubmit = () => {
+    if (checkPassword(password)) {
+      setValidPassword(true);
+    } else {
+      setValidPassword(false);
+    }
+  };
+
 
   const formData = (dateStr) => {
     const year = dateStr.slice(0, 4);
@@ -43,35 +65,59 @@ const Modal = ({ data, updateData, onClose }) => {
     );
   };
 
+  const renderContent = () => {
+    if (validPassword) {
+      return (
+        <>
+          <button onClick={onClose}>닫기</button>
+            {
+              isEditing ? (
+                <button onClick={handleSaveClick}>저장하기</button>
+              ) : (
+                <button onClick={handleEditClick}>수정하기</button>
+            )}
+            <h3>작은 창</h3>
+          <div className="small-window__invention__container">
+            발명의 명칭: 
+            <div className="small-window__invention-name__container">
+              {
+              isEditing ? renderInputField('InventionName') : selectData.InventionName
+              }
+            </div>
+          </div>
+          <div className="small-window__invention__container">
+            출원인: {
+              isEditing ? renderInputField('Applicant') : selectData.Applicant
+            }
+          </div>
+          <div className="small-window__invention__container">
+            출원상태: {selectData.RegistrationStatus}
+          </div>
+          <div className="small-window__invention__container">
+            출원일: {formData(selectData.ApplicationDate)}
+          </div>
+        </>
+      );
+    } else {
+    return (
+      <div>
+        <label htmlFor="password-modal">비밀번호: </label>
+        <input
+          type="password"
+          id="password-modal"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button onClick={handlePasswordSubmit}>확인</button>
+        {validPassword === false && <p>비밀번호가 다릅니다.</p>}
+      </div>
+      );
+    }
+  };
+
   return (
     <div className="small-window">
-      <button onClick={onClose}>닫기</button>
-      {
-        isEditing ? (
-          <button onClick={handleSaveClick}>저장하기</button>
-        ) : (
-          <button onClick={handleEditClick}>수정하기</button>
-      )}
-      <h3>작은 창</h3>
-      <div className="small-window__invention__container">
-        발명의 명칭: 
-        <div className="small-window__invention-name__container">
-        {
-        isEditing ? renderInputField('InventionName') : data.InventionName
-        }
-        </div>
-      </div>
-      <div className="small-window__invention__container">
-        출원인: {
-          isEditing ? renderInputField('Applicant') : data.Applicant
-        }
-      </div>
-      <div className="small-window__invention__container">
-        출원상태: {data.RegistrationStatus}
-      </div>
-      <div className="small-window__invention__container">
-        출원일: {formData(data.ApplicationDate)}
-      </div>
+      {renderContent()}
     </div>
   );
 };
