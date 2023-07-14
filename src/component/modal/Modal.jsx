@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 const Modal = ({ selectData, updateData, onClose }) => {
   const [tempData, setTempData] = useState(selectData);
   const [password, setPassword] = useState('');
-  const [validPassword, setValidPassword] = useState(false);
+  const [validPassword, setValidPassword] = useState(null);
   
   const checkLogin = (input) => {
     if (input === selectData.email) {
@@ -36,7 +36,7 @@ const Modal = ({ selectData, updateData, onClose }) => {
     if (validPassword) {
       return (
         <>
-          <button onClick={onClose}>닫기</button>
+          <button className="small-window__btn" onClick={onClose}>닫기</button>
           
           <div className="small-window__invention__container">
             발명의 명칭: 
@@ -62,7 +62,7 @@ const Modal = ({ selectData, updateData, onClose }) => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button onClick={handlePasswordSubmit}>확인</button>
+        <button className="small-window__btn" onClick={handlePasswordSubmit}>확인</button>
         {validPassword === false && <p>이메일이 다릅니다.</p>}
       </div>
       );
