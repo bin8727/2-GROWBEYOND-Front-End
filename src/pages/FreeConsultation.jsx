@@ -20,7 +20,7 @@ const FreeConsoltation = () => {
   const [isAgreed, setIsAgreed] = useState(false);
 
   const navigate = useNavigate();
-  const { data, setData, allData, setAllData } = useContext(DataContext);
+  const { data, setData } = useContext(DataContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -40,14 +40,13 @@ const FreeConsoltation = () => {
     axiosInstance.post('/api/boards/write/', formData) 
       .then((res) => {
         console.log(res);
-        const newData = title;
-        const newAllData = res.data;
-        setData(newData);
-        setAllData(newAllData);
       })
       .catch((err) => {
         console.log(err);
       });
+      
+      const newData = title;
+      setData(newData)
 
       navigate('/completed-consultation');
   };

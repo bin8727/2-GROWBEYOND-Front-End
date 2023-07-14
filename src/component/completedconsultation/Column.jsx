@@ -1,14 +1,22 @@
 import { useEffect, useState } from "react";
-import DataContext from "../../context";
-import { useContext } from "react";
+import axiosInstance from "../../instance";
 
 const Column = () => {
   const [isData, isSetData] = useState(null);
-  const { allData } = useContext(DataContext);
 
   useEffect(() => {
-    isSetData(allData);
-  }, [allData]);
+    const fetchData = async () => {
+      try {
+        const response = await axiosInstance.get('/api/board/write');
+        console.log(response);
+        isSetData(response.data);
+      } catch(err) {
+        console.log(err);
+      }
+    };
+  
+    fetchData();
+  }, []);
   
   const formData = (dateStr) => {
     const year = dateStr.slice(0, 4);
@@ -40,7 +48,7 @@ const Column = () => {
                 <td>{formData(row.ApplicationDate)}</td>
               </tr>
             ))}
-            </tbody>
+          </tbody>
           ) : (
             <p>Loading...</p>
           )}

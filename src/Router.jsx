@@ -12,10 +12,9 @@ import DataContext from './context';
 
 const Router = () => {
   const [data, setData] = useState('');
-  const [allData, setAllData] = useState('');
 
   return (
-    <DataContext.Provider value={{data, setData, allData, setAllData}}>
+    <DataContext.Provider value={{data, setData}}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path='/feasibility' element={<Feasibility />} />
