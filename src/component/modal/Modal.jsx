@@ -23,8 +23,8 @@ const Modal = ({ selectData, updateData, onClose }) => {
 
   const formData = (dateStr) => {
     const year = dateStr.slice(0, 4);
-    const month = dateStr.slice(4, 6);
-    const day = dateStr.slice(6, 8);
+    const month = dateStr.slice(5, 7);
+    const day = dateStr.slice(8, 10);
     return `${year}년 ${month}월 ${day}일`;
   };
 
