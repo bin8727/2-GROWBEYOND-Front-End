@@ -20,6 +20,14 @@ const FormContainer = (props) => {
         />
 
         <SecondSection 
+          name={props.name}
+          setName={props.setName}
+          password={props.password}
+          setPassword={props.setPassword}
+          telephone={props.telephone}
+          setTelephone={props.setTelephone}
+          email={props.email}
+          setEmail={props.setEmail}
           title={props.title}
           setTitle={props.setTitle}
           description={props.description}
@@ -30,6 +38,8 @@ const FormContainer = (props) => {
           setFile={props.setFile}
           handleSubmit={props.handleSubmit}
           setSelectedOptions={props.setSelectedOptions}
+          isAgreed={props.isAgreed}
+          setIsAgreed={props.setIsAgreed}
         />
       </form>
     </div>

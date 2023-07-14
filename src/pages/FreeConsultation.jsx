@@ -17,6 +17,7 @@ const FreeConsoltation = () => {
   const [counsling, setCounsling] = useState('');
   const [file, setFile] = useState('');
   const [selectedOptions, setSelectedOptions] = useState('');
+  const [isAgreed, setIsAgreed] = useState(false);
 
   const navigate = useNavigate();
   const { data, setData } = useContext(DataContext);
@@ -76,7 +77,8 @@ const FreeConsoltation = () => {
         handleSubmit={handleSubmit}
         selectedOptions={selectedOptions}
         setSelectedOptions={setSelectedOptions}
-        // fetchData={fetchData}
+        isAgreed={isAgreed}
+        setIsAgreed={setIsAgreed}
       />
 
       <div className='freeconsultation__bottom'></div>

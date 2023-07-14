@@ -1,17 +1,28 @@
 import ButtonWrap from "./ButtonWrap";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import File from "../../assets/file.svg";
 
 const SecondSection = (props) => {
   const [agreed, setAgreed] = useState(false);
-  // const [description, setDescription] = useState(props.description);
-  // const [counsling, setCounsling] = useState(props.counsling);
   const [selectedFile, setSelectedFile] = useState(null);
+  const [isButtonActive, setIsButtonActive] = useState(false);
   const fileInputEl = useRef(null);
 
   const handleCheckbox = () => {
     setAgreed(!agreed);
   };
+
+  useEffect(() => {
+    setIsButtonActive(
+      props.name &&
+      props.password &&
+      props.telephone &&
+      props.email &&
+      props.title &&
+      props.counsling &&
+      agreed
+    )
+  }, [props.name, props.password, props.telephone, props.email, props.title, props.counsling, agreed]);
 
   const handleFileInputChange = (e) => {
     const selectFile = e.target.files[0];
@@ -37,9 +48,13 @@ const SecondSection = (props) => {
           <div className="freeconsultation__input-box">
             <input
               maxLength="50"
-              placeholder="예) #배터리, #무선충전"
+              placeholder="예) 배터리, 무선충전"
               value={props.title}
               onChange={(e) => props.setTitle(e.target.value)}
+              onBlur={(e) => {
+                const newValue = e.target.value.replace(/ /g, '');
+                props.setTitle(newValue);
+              }}
             />
           </div>
         </div>
@@ -96,7 +111,7 @@ const SecondSection = (props) => {
         </div>
 
         <div className="freeconsultation__submit-container">
-          <button className="freeconsultation__submit" type="submit" disabled={!agreed} onClick={props.handleSubmit}>
+          <button className="freeconsultation__submit" type="submit" disabled={!isButtonActive} onClick={props.handleSubmit}>
             상담 신청하기
           </button>
         </div>
