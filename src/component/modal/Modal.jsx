@@ -13,7 +13,7 @@ const Modal = ({ selectData, updateData, onClose }) => {
   const [validPassword, setValidPassword] = useState(false);
 
   const query = useQuery();
-  const pk = query.get('pk');
+  const pk = query.get('post_pk');
 
   const checkPassword = (inputPassword) => {
     if (inputPassword === pk) {
