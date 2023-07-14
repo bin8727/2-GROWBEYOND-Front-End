@@ -18,7 +18,7 @@ const Modal = ({ data, updateData, onClose }) => {
 
   const handleSaveClick = async () => {
     try {
-      const response = await axiosInstance.put(`/api/boards/list/86/`, data);
+      const response = await axiosInstance.put(`/api/boards/list/87/`, data);
       updateData(response.data);
       setIsEditing(false);
     } catch (err) {
@@ -61,13 +61,17 @@ const Modal = ({ data, updateData, onClose }) => {
         }
         </div>
       </div>
-      <div>
+      <div className="small-window__invention__container">
         출원인: {
           isEditing ? renderInputField('Applicant') : data.Applicant
         }
       </div>
-      <div>출원상태: {data.RegistrationStatus}</div>
-      <div>출원일: {formData(data.ApplicationDate)}</div>
+      <div className="small-window__invention__container">
+        출원상태: {data.RegistrationStatus}
+      </div>
+      <div className="small-window__invention__container">
+        출원일: {formData(data.ApplicationDate)}
+      </div>
     </div>
   );
 };
