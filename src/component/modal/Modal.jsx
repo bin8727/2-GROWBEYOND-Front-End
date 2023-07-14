@@ -8,10 +8,10 @@ const Modal = ({ selectData, updateData, onClose }) => {
   const [password, setPassword] = useState('');
   const [validPassword, setValidPassword] = useState(false);
 
-  const { data, setData } = useContext(DataContext);
+  const { pwd } = useContext(DataContext);
 
   const checkPassword = (inputPassword) => {
-    if (inputPassword === data) {
+    if (inputPassword === pwd) {
       return true;
     } else {
       return false;
@@ -40,7 +40,7 @@ const Modal = ({ selectData, updateData, onClose }) => {
 
   const handleSaveClick = async () => {
     try {
-      const response = await axiosInstance.put(`/api/boards/list/87/`, data);
+      const response = await axiosInstance.put(`/api/boards/list/87/`, selectData);
       updateData(response.data);
       setIsEditing(false);
     } catch (err) {
@@ -49,8 +49,8 @@ const Modal = ({ selectData, updateData, onClose }) => {
   };
 
   useEffect(() => {
-    setTempData(data);
-  }, [data]);
+    setTempData(selectData);
+  }, [selectData]);
 
   const renderInputField = (field) => {
     return (

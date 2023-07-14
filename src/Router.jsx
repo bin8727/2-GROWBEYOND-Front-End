@@ -11,10 +11,10 @@ import CompletedConsultation from './pages/CompletedConsultation';
 import DataContext from './context';
 
 const Router = () => {
-  const [data, setData] = useState('');
+  const [data, setData, pwd, setPwd] = useState('');
 
   return (
-    <DataContext.Provider value={{data, setData}}>
+    <DataContext.Provider value={{data, setData, pwd, setPwd}}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path='/feasibility' element={<Feasibility />} />
