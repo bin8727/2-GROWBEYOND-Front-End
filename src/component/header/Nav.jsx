@@ -15,7 +15,7 @@ const Nav = (props) => {
       </Link>
   
       <Link
-        to="/patent-kr"
+        to="/"
         className={
           `header__nav-item ${props.isActived === "patentKr" ? "header__nav-item--active" : ""}`
         }
@@ -25,7 +25,7 @@ const Nav = (props) => {
       </Link>
   
       <Link
-        to="/patent-gb"
+        to="/"
         className={
           `header__nav-item ${props.isActived === "patentGb" ? "header__nav-item--active" : ""}`
         }
@@ -35,7 +35,7 @@ const Nav = (props) => {
       </Link>
   
       <Link
-        to="/costguide"
+        to="/"
         className={
           `header__nav-item ${props.isActived === "costguide" ? "header__nav-item--active" : ""}`
         }
@@ -45,7 +45,7 @@ const Nav = (props) => {
       </Link>
   
       <Link
-        to="/processguide"
+        to="/"
         className={
           `header__nav-item ${props.isActived === "processguide" ? "header__nav-item--active" : ""}`
         }
