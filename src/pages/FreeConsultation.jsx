@@ -20,8 +20,7 @@ const FreeConsoltation = () => {
   const [isAgreed, setIsAgreed] = useState(false);
 
   const navigate = useNavigate();
-  const { data, setData } = useContext(DataContext);
-  const { allData, setAllData } = useContext(DataContext);
+  const { data, setData, allData, setAllData } = useContext(DataContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
