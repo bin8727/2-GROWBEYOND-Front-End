@@ -7,7 +7,7 @@ const Column = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axiosInstance.get('/api/board/write');
+        const response = await axiosInstance.get('/api/boards/write');
         console.log(response);
         isSetData(response.data);
       } catch(err) {
