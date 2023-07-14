@@ -56,7 +56,7 @@ const Modal = ({ selectData, updateData, onClose }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axiosInstance.get(`/api/boards/list/${pk}`);
+        const response = await axiosInstance.get(`/api/boards/list/1`);
         console.log(response);
       } catch(err) {
         console.log(err);
