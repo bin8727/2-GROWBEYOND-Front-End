@@ -6,6 +6,7 @@ import PatentGb from './pages/PatentGb';
 import CostGuide from './pages/CostGuide';
 import ProcessGuide from './pages/ProcessGuide';
 import FreeConsoltation from './pages/FreeConsultation';
+import CompletedConsultation from './pages/CompletedConsultation';
 
 const Router = () => {
   return (
@@ -17,6 +18,7 @@ const Router = () => {
       <Route path='/cost-guide' element={<CostGuide />} />
       <Route path='/process-guide' element={<ProcessGuide />} />
       <Route path='/free-consultation' element={<FreeConsoltation />} />
+      <Route path='/completed-consultation' element={<CompletedConsultation />} />
     </Routes>
   );
 };

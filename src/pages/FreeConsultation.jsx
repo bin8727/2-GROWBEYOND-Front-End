@@ -42,7 +42,7 @@ const FreeConsoltation = () => {
         console.log(err);
       });
 
-      navigate('/');
+      navigate('/completed-consultation');
   };
 
   return (
