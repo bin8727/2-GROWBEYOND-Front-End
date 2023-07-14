@@ -18,7 +18,7 @@ const Modal = ({ data, updateData, onClose }) => {
 
   const handleSaveClick = async () => {
     try {
-      const response = await axiosInstance.put(`/api/boards/list/pk/`, data);
+      const response = await axiosInstance.put(`/api/boards/list/86/`, data);
       updateData(response.data);
       setIsEditing(false);
     } catch (err) {
