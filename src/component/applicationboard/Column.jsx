@@ -43,6 +43,14 @@ const Column = () => {
     return `${year}년 ${month}월 ${day}일`;
   };
 
+  const hideName = (name) => {
+    const firstChar = name.slice(0, 1);
+    const lastPart = name.slice(2);
+    const hiddenPart = "*".repeat(1);
+  
+    return `${firstChar}${hiddenPart}${lastPart}`;
+  };
+
   const columns = ['발명의 명칭', '출원인', '출원일'];
   return (
     <>
@@ -69,7 +77,7 @@ const Column = () => {
             {isData.map((row, index) => (
               <tr key={index}>
                 <td onClick={() => {onSelectRow(row)}}>{row.title}</td>
-                <td>{row.name}</td>
+                <td>{hideName(row.name)}</td>
                 <td>{formData(row.created_at)}</td>
               </tr>
             ))}

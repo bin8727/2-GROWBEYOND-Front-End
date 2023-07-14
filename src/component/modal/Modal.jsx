@@ -1,43 +1,25 @@
 import { useState, useEffect } from "react";
-import axiosInstance from '../../instance';
 
 const Modal = ({ selectData, updateData, onClose }) => {
-  const [isEditing, setIsEditing] = useState(false);
   const [tempData, setTempData] = useState(selectData);
   const [password, setPassword] = useState('');
-  const [validPassword, setValidPassword] = useState(false);
-  const [isData, SetIsData] = useState(null);
+  const [validPassword, setValidPassword] = useState(true);
   
-  const checkPassword = (inputPassword) => {
-    if (inputPassword === selectData.email) {
+  const checkLogin = (input) => {
+    if (input === selectData.email) {
       return true;
     } else {
       return false;
     }
   }
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axiosInstance.get('/api/boards/list');
-        console.log(response);
-        SetIsData(response.data);
-      } catch(err) {
-        console.log(err);
-      }
-    };
-  
-    fetchData();
-  }, []);
-
   const handlePasswordSubmit = () => {
-    if (checkPassword(password)) {
+    if (checkLogin(password)) {
       setValidPassword(true);
     } else {
       setValidPassword(false);
     }
   };
-
 
   const formData = (dateStr) => {
     const year = dateStr.slice(0, 4);
@@ -46,61 +28,24 @@ const Modal = ({ selectData, updateData, onClose }) => {
     return `${year}년 ${month}월 ${day}일`;
   };
 
-  const handleEditClick = () => {
-    setIsEditing(!isEditing);
-  };
-
-  const handleSaveClick = async () => {
-    try {
-      const response = await axiosInstance.put(`/api/boards/list/`, selectData);
-      updateData(response.data);
-      setIsEditing(false);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
   useEffect(() => {
     setTempData(selectData);
   }, [selectData]);
-
-  const renderInputField = (field) => {
-    return (
-      <input
-      className="small-window__input"
-      type="text"
-      value={tempData[field]}
-      onChange={(e) => {
-        setTempData({...tempData, [field]: e.target.value});
-      }}
-    />
-    );
-  };
 
   const renderContent = () => {
     if (validPassword) {
       return (
         <>
           <button onClick={onClose}>닫기</button>
-            {
-              isEditing ? (
-                <button onClick={handleSaveClick}>저장하기</button>
-              ) : (
-                <button onClick={handleEditClick}>수정하기</button>
-            )}
-            <h3>작은 창</h3>
+          
           <div className="small-window__invention__container">
             발명의 명칭: 
             <div className="small-window__invention-name__container">
-              {
-              isEditing ? renderInputField('InventionName') : selectData.title
-              }
+              {selectData.title}
             </div>
           </div>
           <div className="small-window__invention__container">
-            출원인: {
-              isEditing ? renderInputField('Applicant') : selectData.name
-            }
+            출원인: {selectData.name}
           </div>
           <div className="small-window__invention__container">
             출원일: {formData(selectData.created_at)}
