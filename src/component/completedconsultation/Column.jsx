@@ -1,6 +1,17 @@
 import { useState } from "react";
+import axiosInstance from "../../instance";
 
 const Column = () => {
+  const fetchData = async () => {
+    try {
+      const response = await axiosInstance.get('/api/board/write');
+      console.log(response);
+    } catch(err) {
+      console.log(err);
+    }
+  };
+
+  fetchData();
   const [isData, isSetData] = useState([
     {
       "ApplicationDate": "20060109",
