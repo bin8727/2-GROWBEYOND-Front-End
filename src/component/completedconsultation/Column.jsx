@@ -38,7 +38,8 @@ const Column = () => {
               ))}
             </tr>
           </thead>
-          <tbody>
+          {isData ? (
+            <tbody>
             {isData.map((row, index) => (
               <tr key={index}>
                 <td>{row.InventionName}</td>
@@ -47,7 +48,10 @@ const Column = () => {
                 <td>{formData(row.ApplicationDate)}</td>
               </tr>
             ))}
-          </tbody>
+            </tbody>
+          ) : (
+            <p>Loading...</p>
+          )}
         </table>
       </section>
     </>
