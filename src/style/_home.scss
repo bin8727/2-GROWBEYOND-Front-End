@@ -1,12 +1,13 @@
 .home {
   opacity: 1;
   background-color: rgb(249 250 251);
-  height: 100vh;
+  height: 100%;
   
   &__container {
     width: 100%;
     opacity: 1;
     background-color: rgb(222 237 251);
+    height: inherit;
   }
 
   &__wrap {
