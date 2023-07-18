@@ -100,9 +100,20 @@ const SecondSection = (props) => {
         </div>
 
         <div className="freeconsultation__agree-container">
-          <input className="freeconsultation__agree" type="checkbox" onClick={handleCheckbox} />
+          <input className="freeconsultation__agree" type="checkbox" />
           <label className="freeconsultation__agree-label">
             상담에 필요한{" "}
+            <button className="freeconsultation__agree-card" type="button">
+              개인정보 수집
+            </button>{" "}
+            동의
+          </label>
+        </div>
+
+        <div className="freeconsultation__agree-container">
+          <input className="freeconsultation__agree" type="checkbox" onClick={handleCheckbox} />
+          <label className="freeconsultation__agree-label">
+            수요자 조사를 위한{" "}
             <button className="freeconsultation__agree-card" type="button">
               개인정보 수집
             </button>{" "}
