@@ -10,7 +10,7 @@ const Footer = () => {
 
                         <div className="footer__bottom">
                             <p>
-                                <a href="https://github.com/GrowthonbyStarting/2-GROWBEYOND-Front-End.git">Frontend GitHub</a>
+                                <a href="https://github.com/bin8727/2-GROWBEYOND-Front-End.git">Frontend GitHub</a>
                                 <a href="https://github.com/GrowthonbyStarting/2-GROWBEYOND-Back-End.git">Backend GitHub</a>
                             </p>
                             <p style={{padding: '0.625rem 0rem 0.625rem 0rem'}}>
